@@ -9,7 +9,7 @@ async function connectToWhatsApp () {
         printQRInTerminal: true,
         auth: state
     })
-    conn.ev.on ('creds.update', saveCreds)
+    sock.ev.on ('creds.update', saveCreds)
     sock.ev.on('connection.update', (update) => {
         const { connection, lastDisconnect } = update
         if(connection === 'close') {
